@@ -1,5 +1,16 @@
-#EXTM3U
-#EXTINF:-1,tvg-id="4K60PHLG-HEVC-EAC3测试" tvg-name="4K60PHLG-HEVC-EAC3测试" tvg-logo="https://epg.112114.xyz/logo/4K60PHLGEAC3测试.png" group-title="其他",4K60PHLG-HEVC-EAC3测试
-http://159.75.85.63:5680/d/ad/playad.m3u8
-#EXTINF:-1,tvg-id="4K60PSDR-H264-AAC测试" tvg-name="4K60PSDR-H264-AAC测试" tvg-logo="https://epg.112114.xyz/logo/4K60PSDRHAAC测试.png" group-title="其他",4K60PSDR-H264-AAC测试
-http://159.75.85.63:5680/d/ad/h264/playad.m3u8
+--2024-02-21 20:29:51--  https://github.com/Ftindy/IPTV-URL/raw/main/IPTV.m3u
+正在连接 127.0.0.1:7890... 已连接。
+已发出 Proxy 请求，正在等待回应... 302 Found
+位置：https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/IPTV.m3u [跟随至新的 URL]
+--2024-02-21 20:29:52--  https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/IPTV.m3u
+正在连接 127.0.0.1:7890... 已连接。
+已发出 Proxy 请求，正在等待回应... 200 OK
+长度：104354 (102K) [text/plain]
+正在保存至: “IPTV.m3u”
+
+     0K .......... .......... .......... .......... .......... 49%  363K 0s
+    50K .......... .......... .......... .......... .......... 98%  194K 0s
+   100K .                                                     100% 3640G=0.4s
+
+2024-02-21 20:29:54 (258 KB/s) - 已保存 “IPTV.m3u” [104354/104354])
+
