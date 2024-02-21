@@ -14,3 +14,19 @@
 
 2024-02-21 20:29:54 (258 KB/s) - 已保存 “IPTV.m3u” [104354/104354])
 
+--2024-02-21 20:33:14--  https://github.com/Ftindy/IPTV-URL/raw/main/IPTV.m3u
+正在连接 127.0.0.1:7890... 已连接。
+已发出 Proxy 请求，正在等待回应... 302 Found
+位置：https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/IPTV.m3u [跟随至新的 URL]
+--2024-02-21 20:33:16--  https://raw.githubusercontent.com/Ftindy/IPTV-URL/main/IPTV.m3u
+正在连接 127.0.0.1:7890... 已连接。
+已发出 Proxy 请求，正在等待回应... 200 OK
+长度：104354 (102K) [text/plain]
+正在保存至: “IPTV.m3u”
+
+     0K .......... .......... .......... .......... .......... 49%  534K 0s
+    50K .......... .......... .......... .......... .......... 98%  837K 0s
+   100K .                                                     100% 3640G=0.2s
+
+2024-02-21 20:33:17 (664 KB/s) - 已保存 “IPTV.m3u” [104354/104354])
+
