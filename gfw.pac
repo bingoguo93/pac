@@ -39,6 +39,7 @@ var directDomains = {
   "ecombdapi.com": 1,
   "fonts.googleapis.com": 1,
   "fonts.gstatic.com": 1,
+  "github.com": 1,
   "gtimg.cn": 1,
   "gtimg.com": 1,
   "hdslb.com": 1,
