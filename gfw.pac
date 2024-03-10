@@ -101,6 +101,7 @@ var domainsUsingProxy = {
   "live.com": 1,
   "segment.io": 1,
   "sehuatang.net": 1,
+  "speedtest.net": 1,
   "stackoverflow.com": 1,
   "t.me": 1,
   "twitter.com": 1,
