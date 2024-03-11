@@ -80,6 +80,7 @@ var domainsUsingProxy = {
   "bing.cn": 1,
   "bing.com": 1,
   "bing.net": 1,
+  "browserleaks.com": 1,
   "cloudflare.com": 1,
   "docker.com": 1,
   "facebook.com": 1,
