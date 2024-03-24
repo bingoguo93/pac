@@ -11022,6 +11022,6 @@ function FindProxyForURL(url, host) {
         return direct;
     }
 
-    alert(`${host} NO RULES WARE MATCHED, USING DIRECT`)
-    return direct;
+    alert(`${host} NO RULES WARE MATCHED, USING PROXY`)
+    return proxy;
 }
