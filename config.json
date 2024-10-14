@@ -104,7 +104,7 @@
       "version": "5",
       "username": "sekai",
       "password": "admin",
-      "network": "udp",
+      "network": "udp"
    }
   ],
   "route": {
