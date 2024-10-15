@@ -101,7 +101,7 @@
             "username": "",
             "password": "",
             "version": "5",
-            "network": "tcp"
+            "network": "udp"
         }
     ],
     "route": {
@@ -147,73 +147,10 @@
           }
         ],
         "outbound": "block-out"
-      },
-      {
-        "rule_set": [
-          "netflix",
-          "max",
-		  "primevideo",
-		  "youtube",
-		  "ai",
-		  "proxy",
-		  "netflixip",
-		  "telegramip"
-        ],
-        "outbound": "socks-out"
-      }
-    ],
-    "rule_set": [
-      {
-        "tag": "netflix",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/netflix.srs"
-      },
-      {
-        "tag": "max",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/max.srs"
-      },
-      {
-        "tag": "primevideo",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/primevideo.srs"
-      },
-      {
-        "tag": "youtube",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/youtube.srs"
-      },
-      {
-        "tag": "ai",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/ai.srs"
-      },
-      {
-        "tag": "proxy",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/proxy.srs"
-      },
-      {
-        "tag": "netflixip",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/netflixip.srs"
-      },
-      {
-        "tag": "telegramip",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/telegramip.srs"
       }
     ],
     "auto_detect_interface": true,
-    "final": "direct-out"
+    "final": "socks-out"
     },
   "experimental": {
     "cache_file": {
