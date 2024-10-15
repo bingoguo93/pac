@@ -167,56 +167,48 @@
         "tag": "netflix",
         "type": "remote",
         "format": "binary",
-        "path": "./ruleset/netflix.srs",
         "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/netflix.srs"
       },
       {
         "tag": "max",
         "type": "remote",
         "format": "binary",
-        "path": "./ruleset/max.srs",
         "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/max.srs"
       },
       {
         "tag": "primevideo",
         "type": "remote",
         "format": "binary",
-        "path": "./ruleset/primevideo.srs",
         "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/primevideo.srs"
       },
       {
         "tag": "youtube",
         "type": "remote",
         "format": "binary",
-        "path": "./ruleset/youtube.srs",
         "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/youtube.srs"
       },
       {
         "tag": "ai",
         "type": "remote",
         "format": "binary",
-        "path": "./ruleset/ai.srs",
         "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/ai.srs"
       },
       {
         "tag": "proxy",
         "type": "remote",
         "format": "binary",
-        "path": "./ruleset/proxy.srs",
         "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/proxy.srs"
       },
       {
         "tag": "netflixip",
         "type": "remote",
         "format": "binary",
-        "path": "./ruleset/netflixip.srs",
         "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/netflixip.srs"
       },
       {
         "tag": "telegramip",
         "type": "remote",
         "format": "binary",
-        "path": "./ruleset/telegramip.srs",
         "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/telegramip.srs"
       }
     ],
@@ -238,4 +230,5 @@
     }
   }
 }
+
 
