@@ -1,7 +1,7 @@
 {
     "log": {
         "disabled": false,
-        "level": "info",
+        "level": "trace",
         "output": "sing-box.log",
         "timestamp": true
     },
@@ -45,6 +45,10 @@
             }, 
 			{
                 "clash_mode": "global",
+                "server": "google"
+            }, 
+			{
+                "rule_set": "geosite-geolocation-cn",
                 "server": "default-dns"
             }
         ],
@@ -101,7 +105,7 @@
             "username": "",
             "password": "",
             "version": "5",
-            "network": "udp"
+            "network": "tcp"
         }
     ],
     "route": {
@@ -147,6 +151,27 @@
           }
         ],
         "outbound": "block-out"
+      },
+      {
+        "rule_set": [
+          "geoip-cn",
+          "geosite-geolocation-cn"
+        ],
+        "outbound": "direct-out"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-geolocation-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
       }
     ],
     "auto_detect_interface": true,
