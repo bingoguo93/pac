@@ -204,7 +204,7 @@
         "format": "binary",
         "path": "./ruleset/proxy.srs",
         "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/proxy.srs"
-      }
+      },
       {
         "tag": "netflixip",
         "type": "remote",
@@ -238,3 +238,4 @@
     }
   }
 }
+
