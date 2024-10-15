@@ -1,7 +1,7 @@
 {
     "log": {
         "disabled": false,
-        "level": "trace",
+        "level": "info",
         "output": "sing-box.log",
         "timestamp": true
     },
@@ -45,10 +45,6 @@
             }, 
 			{
                 "clash_mode": "global",
-                "server": "google"
-            }, 
-			{
-                "rule_set": "geosite-geolocation-cn",
                 "server": "default-dns"
             }
         ],
@@ -154,28 +150,78 @@
       },
       {
         "rule_set": [
-          "geoip-cn",
-          "geosite-geolocation-cn"
+          "netflix",
+          "max",
+		  "primevideo",
+		  "youtube",
+		  "ai",
+		  "proxy",
+		  "netflixip",
+		  "telegramip"
         ],
-        "outbound": "direct-out"
+        "outbound": "socks-out"
       }
     ],
     "rule_set": [
       {
+        "tag": "netflix",
         "type": "remote",
-        "tag": "geoip-cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+        "path": "./ruleset/netflix.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/netflix.srs"
       },
       {
+        "tag": "max",
         "type": "remote",
-        "tag": "geosite-geolocation-cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+        "path": "./ruleset/max.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/max.srs"
+      },
+      {
+        "tag": "primevideo",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/primevideo.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/primevideo.srs"
+      },
+      {
+        "tag": "youtube",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/youtube.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/youtube.srs"
+      },
+      {
+        "tag": "ai",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/ai.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/ai.srs"
+      },
+      {
+        "tag": "proxy",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/proxy.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/proxy.srs"
+      }
+      {
+        "tag": "netflixip",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/netflixip.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/netflixip.srs"
+      },
+      {
+        "tag": "telegramip",
+        "type": "remote",
+        "format": "binary",
+        "path": "./ruleset/telegramip.srs",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/telegramip.srs"
       }
     ],
     "auto_detect_interface": true,
-    "final": "socks-out"
+    "final": "direct-out"
     },
   "experimental": {
     "cache_file": {
@@ -192,5 +238,3 @@
     }
   }
 }
-
-
