@@ -1,25 +1,102 @@
 {
     "log": {
         "disabled": false,
-        "level": "info",
+        "level": "trace",
         "output": "sing-box.log",
         "timestamp": true
     },
+    "dns": {
+        "servers": [
+		    {
+                "tag": "default-dns",
+                "address": "192.168.31.2",
+                "detour": "direct-out"
+            }, 
+			{
+                "tag": "system-dns",
+                "address": "local",
+                "detour": "direct-out"
+            }, 
+			{
+                "tag": "block-dns",
+                "address": "rcode://name_error"
+            }, 
+			{
+                "tag": "google",
+                "address": "https://dns.google/dns-query",
+                "address_resolver": "default-dns",
+                "address_strategy": "ipv4_only",
+                "strategy": "ipv4_only",
+                "client_subnet": "1.0.1.0"
+            }
+        ],
+        "rules": [
+		    {
+                "outbound": "any",
+                "server": "default-dns"
+            }, 
+			{
+                "query_type": "HTTPS",
+                "server": "block-dns"
+            }, 
+			{
+                "clash_mode": "direct",
+                "server": "default-dns"
+            }, 
+			{
+                "clash_mode": "global",
+                "server": "google"
+            }, 
+			{
+                "rule_set": "geosite-geolocation-cn",
+                "server": "default-dns"
+            }
+        ],
+        "strategy": "ipv4_only",
+        "disable_cache": false,
+        "disable_expire": false,
+        "independent_cache": false,
+        "final": "default-dns"
+    },
     "inbounds": [
 	    {
+            "type": "direct",
+            "tag": "dns-in",
+            "listen": "::",
+            "listen_port": 5333
+        }, 
+		{
             "type": "mixed",
             "tag": "mixed-in",
-            "listen": "0.0.0.0",
-            "listen_port": 7891
-        },
+            "listen": "::",
+            "listen_port": 5330,
+            "sniff": true,
+            "sniff_override_destination": false,
+            "set_system_proxy": false
+        }, 
 		{
             "type": "redirect",
             "tag": "redirect-in",
             "listen": "::",
-            "listen_port": 5331
+            "listen_port": 5331,
+            "sniff": true,
+            "sniff_override_destination": false
         }
     ],
     "outbounds": [
+	   {
+            "type": "direct",
+            "tag": "direct-out",
+            "routing_mark": 100
+        }, 
+		{
+            "type": "block",
+            "tag": "block-out"
+        }, 
+		{
+            "type": "dns",
+            "tag": "dns-out"
+        }, 
 		{
             "type": "socks",
             "tag": "socks-out",
@@ -28,23 +105,83 @@
             "username": "",
             "password": "",
             "version": "5",
-            "network": "udp"
+            "network": "tcp"
         }
     ],
     "route": {
         "rules": [
-           {
-             "clash_mode": "Global",
-             "outbound": "socks-out"
-           }
+          {
+            "type": "logical",
+            "mode": "or",
+            "rules": [
+          {
+            "protocol": "dns"
+          },
+          {
+            "port": 53
+          }
         ],
+        "outbound": "dns-out"
+      },
+      {
+        "ip_is_private": true,
+        "outbound": "direct-out"
+      },
+      {
+        "clash_mode": "Direct",
+        "outbound": "direct-out"
+      },
+      {
+        "clash_mode": "Global",
+        "outbound": "socks-out"
+      },
+      {
+        "type": "logical",
+        "mode": "or",
+        "rules": [
+          {
+            "port": 853
+          },
+          {
+            "network": "udp",
+            "port": 443
+          },
+          {
+            "protocol": "stun"
+          }
+        ],
+        "outbound": "block-out"
+      },
+      {
+        "rule_set": [
+          "geoip-cn",
+          "geosite-geolocation-cn"
+        ],
+        "outbound": "direct-out"
+      }
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-geolocation-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+      }
+    ],
     "auto_detect_interface": true,
     "final": "socks-out"
     },
   "experimental": {
     "cache_file": {
       "enabled": true,
-      "path": "cache.db"
+      "path": "cache.db",
+      "store_fakeip": true
     },
     "clash_api": {
       "external_ui": "ui",
@@ -55,4 +192,5 @@
     }
   }
 }
+
 
