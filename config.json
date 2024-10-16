@@ -21,6 +21,10 @@
     ],
     "outbounds": [
         {
+            "type": "direct",
+            "tag": "direct-out"
+        },
+        {
             "type": "socks",
             "tag": "socks-out",
             "server": "192.168.31.82",
@@ -34,6 +38,27 @@
     ],
     "route": {
         "rules": [
+           {
+             "domain": [
+               "edgt.abram.dynv6.net"
+             ],
+             "domain_suffix": [
+               ".cn"
+             ],
+             "domain_regex": [
+               "^stun\\..+"
+             ],
+             "geosite": [
+               "cn"
+             ],
+             "source_geoip": [
+               "private"
+             ],
+             "geoip": [
+               "cn"
+             ],
+             "outbound": "direct-out"
+           },
            {
              "clash_mode": "Global",
              "outbound": "socks-out"
