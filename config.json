@@ -37,35 +37,41 @@
         }
     ],
     "route": {
-        "rules": [
-           {
-             "domain": [
-               "edgt.abram.dynv6.net"
-             ],
-             "domain_suffix": [
-               ".cn"
-             ],
-             "domain_regex": [
-               "^stun\\..+"
-             ],
-             "geosite": [
-               "cn"
-             ],
-             "source_geoip": [
-               "private"
-             ],
-             "geoip": [
-               "cn"
-             ],
-             "outbound": "direct-out"
-           },
-           {
-             "clash_mode": "Global",
-             "outbound": "socks-out"
-           }
-        ],
-    "auto_detect_interface": true,
-    "final": "socks-out"
+      "rules": [
+         {
+           "domain": [
+             "edgt.abram.dynv6.net"
+           ],
+           "outbound": "direct-out"
+         },
+         {
+           "rule_set": [
+             "geoip-cn",
+             "geosite-geolocation-cn"
+           ],
+           "outbound": "direct-out"
+         },
+         {
+           "clash_mode": "Global",
+           "outbound": "socks-out"
+         }
+      ],
+      "rule_set": [
+        {
+          "type": "remote",
+          "tag": "geoip-cn",
+          "format": "binary",
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geoip/rule-set/geoip-cn.srs"
+        },
+        {
+          "type": "remote",
+          "tag": "geosite-geolocation-cn",
+          "format": "binary",
+          "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+        }
+      ],
+      "auto_detect_interface": true,
+      "final": "socks-out"
     },
   "experimental": {
       "cache_file": {
