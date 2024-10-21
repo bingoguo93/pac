@@ -12,7 +12,7 @@
                 "address": "192.168.31.2",
                 "detour": "direct-out"
             },
-			{
+	    {
                 "tag": "block-dns",
                 "address": "rcode://name_error"
             }, 
@@ -26,15 +26,11 @@
             }
         ],
         "rules": [
-		    {
+	    {
                 "outbound": "any",
                 "server": "default-dns"
             }, 
-			{
-                "query_type": "HTTPS",
-                "server": "block-dns"
-            }, 
-			{
+            {
                 "clash_mode": "direct",
                 "server": "default-dns"
             }, 
@@ -128,24 +124,7 @@
           },
           {
             "clash_mode": "Global",
-            "outbound": "socks-out"
-          },
-          {
-            "type": "logical",
-            "mode": "or",
-            "rules": [
-              {
-                "port": 853
-              },
-              {
-                "network": "udp",
-                "port": 443
-              },
-              {
-                "protocol": "stun"
-              }
-            ],
-            "outbound": "block-out"
+            "outbound": "direct-out"
           },
           {
             "rule_set": [
