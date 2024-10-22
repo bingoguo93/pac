@@ -1,42 +1,45 @@
 {
     "log": {
         "disabled": false,
-        "level": "warn",
-        "output": "./sing-box.log",
+        "level": "info",
+        "output": "sing-box.log",
         "timestamp": true
     },
     "dns": {
         "servers": [
-            {
+		    {
                 "tag": "default-dns",
                 "address": "192.168.31.2",
                 "detour": "direct-out"
-            }, 
-            {
-                "tag": "system-dns",
-                "address": "local",
-                "detour": "direct-out"
-            }, 
-            {
+            },
+	    {
                 "tag": "block-dns",
                 "address": "rcode://name_error"
+            }, 
+	    {
+                "tag": "cloudflare",
+                "address": "https://1.1.1.1/dns-query",
+                "address_resolver": "default-dns",
+                "address_strategy": "ipv4_only",
+                "strategy": "ipv4_only",
+                "client_subnet": "1.0.1.0"
             }
         ],
         "rules": [
-            {
+	    {
                 "outbound": "any",
                 "server": "default-dns"
-            }, 
-            {
-                "query_type": "HTTPS",
-                "server": "block-dns"
             }, 
             {
                 "clash_mode": "direct",
                 "server": "default-dns"
             }, 
-            {
+			{
                 "clash_mode": "global",
+                "server": "default-dns"
+            }, 
+			{
+                "rule_set": "geosite-geolocation-cn",
                 "server": "default-dns"
             }
         ],
@@ -47,22 +50,22 @@
         "final": "default-dns"
     },
     "inbounds": [
-        {
+	    {
             "type": "direct",
             "tag": "dns-in",
             "listen": "::",
             "listen_port": 5333
         }, 
-        {
+		{
             "type": "mixed",
             "tag": "mixed-in",
             "listen": "::",
-            "listen_port": 5330,
+            "listen_port": 7891,
             "sniff": true,
             "sniff_override_destination": false,
             "set_system_proxy": false
         }, 
-        {
+		{
             "type": "redirect",
             "tag": "redirect-in",
             "listen": "::",
@@ -72,96 +75,96 @@
         }
     ],
     "outbounds": [
-        {
+	   {
             "type": "direct",
             "tag": "direct-out",
             "routing_mark": 100
         }, 
-        {
+		{
             "type": "block",
             "tag": "block-out"
         }, 
-        {
+		{
             "type": "dns",
             "tag": "dns-out"
         }, 
-        {
+		{
             "type": "socks",
             "tag": "socks-out",
-            "server": "proxy.local",
+            "server": "192.168.31.82",
             "server_port": 7891,
+            "username": "",
+            "password": "",
             "version": "5",
-            "network": "udp"
+            "network": "tcp"
         }
     ],
     "route": {
         "rules": [
-            {
-                "inbound": "dns-in",
-                "outbound": "dns-out"
-            }, 
-            {
-                "protocol": "dns",
-                "outbound": "dns-out"
-            }, 
-            {
-                "protocol": "quic",
-                "outbound": "block-out"
-            }, 
-            {
-                "clash_mode": "direct",
-                "outbound": "direct-out"
-            }, 
-            {
-                "rule_set": [
-                    "netflix",
-                    "youtube",
-                    "ai",
-                    "proxy"
-                ],
-                "outbound": "socks-out"
-            }
-        ],
-        "rule_set": [
           {
-            "tag": "netflix",
-            "type": "remote",
-            "format": "binary",
-            "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/netflix.srs"
+            "type": "logical",
+            "mode": "or",
+            "rules": [
+              {
+                "protocol": "dns"
+              },
+              {
+                "port": 53
+              }
+            ],
+            "outbound": "dns-out"
           },
           {
-            "tag": "youtube",
-            "type": "remote",
-            "format": "binary",
-            "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/youtube.srs"
+            "ip_is_private": true,
+            "outbound": "direct-out"
           },
           {
-            "tag": "ai",
-            "type": "remote",
-            "format": "binary",
-            "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/ai.srs"
+            "clash_mode": "Direct",
+            "outbound": "direct-out"
           },
           {
-            "tag": "proxy",
-            "type": "remote",
-            "format": "binary",
-            "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/proxy.srs"
+            "clash_mode": "Global",
+            "outbound": "direct-out"
+          },
+          {
+            "rule_set": [
+              "geoip-cn",
+              "geosite-geolocation-cn"
+            ],
+            "outbound": "direct-out"
           }
-        ],
-        "auto_detect_interface": true,
-        "final": "direct-out"
+    ],
+    "rule_set": [
+      {
+        "type": "remote",
+        "tag": "geoip-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs"
+      },
+      {
+        "type": "remote",
+        "tag": "geosite-geolocation-cn",
+        "format": "binary",
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-geolocation-cn.srs"
+      }
+    ],
+    "auto_detect_interface": true,
+    "final": "socks-out"
     },
-    "experimental": {
-        "cache_file": {
-            "enabled": true,
-            "path": "./cache.db"
-        },
-        "clash_api": {
-            "external_controller": "127.0.0.1:9090",
-            "external_ui": "./ui/",
-            "external_ui_download_detour": "socks-out",
-            "default_mode": "rule"
-        }
+  "experimental": {
+    "cache_file": {
+      "enabled": true,
+      "path": "cache.db",
+      "store_fakeip": true
+    },
+    "clash_api": {
+      "external_ui": "ui",
+      "external_controller": "0.0.0.0:9090",
+      "external_ui_download_url": "https://ghproxy.net/https://github.com/MetaCubeX/Yacd-meta/archive/gh-pages.zip",
+      "external_ui_download_detour": "direct-out",
+      "default_mode": "Enhanced"
     }
+  }
 }
+
 
