@@ -51,8 +51,7 @@
         "disable_cache": false,
         "disable_expire": false,
         "independent_cache": false,
-        "final": "default-dns",
-		"client_subnet": "1.0.1.0"
+        "final": "default-dns"
     },
     "inbounds": [
 	    {
