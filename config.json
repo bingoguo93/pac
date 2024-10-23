@@ -156,48 +156,50 @@
         "type": "remote",
         "tag": "geoip-cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs"
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "download_detour": "socks-out"
       },
       {
         "type": "remote",
         "tag": "geosite-geolocation-cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-geolocation-cn.srs"
+        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-geolocation-cn.srs",
+        "download_detour": "socks-out"
       },
       {
         "tag": "netflix",
         "type": "remote",
         "format": "binary",
         "url": "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@sing-box-ruleset/netflix.srs",
-        "download_detour": "direct-out"
+        "download_detour": "socks-out"
       },
       {
         "tag": "youtube",
         "type": "remote",
         "format": "binary",
         "url": "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@sing-box-ruleset/youtube.srs",
-        "download_detour": "direct-out"
+        "download_detour": "socks-out"
       },
       {
         "tag": "ai",
         "type": "remote",
         "format": "binary",
         "url": "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@sing-box-ruleset/ai.json",
-        "download_detour": "direct-out"
+        "download_detour": "socks-out"
       },
       {
         "tag": "proxy",
         "type": "remote",
         "format": "binary",
         "url": "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@sing-box-ruleset/proxy.srs",
-        "download_detour": "direct-out"
+        "download_detour": "socks-out"
       },
       {
         "tag": "telegramip",
         "type": "remote",
         "format": "binary",
         "url": "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@sing-box-ruleset/telegramip.srs",
-        "download_detour": "direct-out"
+        "download_detour": "socks-out"
       }
     ],
     "auto_detect_interface": true,
