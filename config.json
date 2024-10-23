@@ -135,8 +135,6 @@
           },
           {
               "rule_set": [
-                  "netflix",
-                  "youtube",
                   "ai",
                   "proxy",
                   "telegramip"
@@ -164,20 +162,6 @@
         "tag": "geosite-geolocation-cn",
         "format": "binary",
         "url": "https://cdn.jsdelivr.net/gh/lyc8503/sing-box-rules@rule-set-geosite/geosite-geolocation-cn.srs",
-        "download_detour": "socks-out"
-      },
-      {
-        "tag": "netflix",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@sing-box-ruleset/netflix.srs",
-        "download_detour": "socks-out"
-      },
-      {
-        "tag": "youtube",
-        "type": "remote",
-        "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@sing-box-ruleset/youtube.srs",
         "download_detour": "socks-out"
       },
       {
