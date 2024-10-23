@@ -156,14 +156,14 @@
         "type": "remote",
         "tag": "geoip-cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geoip/geoip-cn.srs",
+        "url": "https://cdn.jsdelivr.net/gh/lyc8503/sing-box-rules@rule-set-geoip/geoip-cn.srs",
         "download_detour": "socks-out"
       },
       {
         "type": "remote",
         "tag": "geosite-geolocation-cn",
         "format": "binary",
-        "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-geolocation-cn.srs",
+        "url": "https://cdn.jsdelivr.net/gh/lyc8503/sing-box-rules@rule-set-geosite/geosite-geolocation-cn.srs",
         "download_detour": "socks-out"
       },
       {
