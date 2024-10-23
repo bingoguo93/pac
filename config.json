@@ -7,16 +7,16 @@
     },
     "dns": {
         "servers": [
-		    {
+                    {
                 "tag": "default-dns",
                 "address": "192.168.31.2",
                 "detour": "direct-out"
             },
-	    {
+            {
                 "tag": "block-dns",
                 "address": "rcode://name_error"
             }, 
-	    {
+            {
                 "tag": "cloudflare",
                 "address": "https://1.1.1.1/dns-query",
                 "address_resolver": "default-dns",
@@ -26,7 +26,7 @@
             }
         ],
         "rules": [
-	    {
+            {
                 "outbound": "any",
                 "server": "default-dns"
             }, 
@@ -34,11 +34,11 @@
                 "clash_mode": "direct",
                 "server": "default-dns"
             }, 
-			{
+                        {
                 "clash_mode": "global",
                 "server": "default-dns"
             }, 
-			{
+                        {
                 "rule_set": "geosite-geolocation-cn",
                 "server": "default-dns"
             }
@@ -50,13 +50,13 @@
         "final": "default-dns"
     },
     "inbounds": [
-	    {
+            {
             "type": "direct",
             "tag": "dns-in",
             "listen": "::",
             "listen_port": 5333
         }, 
-		{
+                {
             "type": "mixed",
             "tag": "mixed-in",
             "listen": "::",
@@ -65,7 +65,7 @@
             "sniff_override_destination": false,
             "set_system_proxy": false
         }, 
-		{
+                {
             "type": "redirect",
             "tag": "redirect-in",
             "listen": "::",
@@ -75,20 +75,20 @@
         }
     ],
     "outbounds": [
-	   {
+           {
             "type": "direct",
             "tag": "direct-out",
             "routing_mark": 100
         }, 
-		{
+                {
             "type": "block",
             "tag": "block-out"
         }, 
-		{
+                {
             "type": "dns",
             "tag": "dns-out"
         }, 
-		{
+                {
             "type": "socks",
             "tag": "socks-out",
             "server": "192.168.31.82",
@@ -132,6 +132,23 @@
               "geosite-geolocation-cn"
             ],
             "outbound": "direct-out"
+          },
+          {
+              "rule_set": [
+                  "netflix",
+                  "youtube",
+                  "ai",
+                  "proxy",
+                  "telegramip"
+              ],
+              "outbound": "socks-out"
+          },
+          {
+              "domain_keyword": [
+              "test",
+              "wogg"
+              ],
+              "outbound": "direct-out"
           }
     ],
     "rule_set": [
@@ -146,10 +163,45 @@
         "tag": "geosite-geolocation-cn",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/lyc8503/sing-box-rules/rule-set-geosite/geosite-geolocation-cn.srs"
+      },
+      {
+        "tag": "netflix",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@sing-box-ruleset/netflix.srs",
+        "download_detour": "direct-out"
+      },
+      {
+        "tag": "youtube",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@sing-box-ruleset/youtube.srs",
+        "download_detour": "direct-out"
+      },
+      {
+        "tag": "ai",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@sing-box-ruleset/ai.json",
+        "download_detour": "direct-out"
+      },
+      {
+        "tag": "proxy",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@sing-box-ruleset/proxy.srs",
+        "download_detour": "direct-out"
+      },
+      {
+        "tag": "telegramip",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@sing-box-ruleset/telegramip.srs",
+        "download_detour": "direct-out"
       }
     ],
     "auto_detect_interface": true,
-    "final": "socks-out"
+    "final": "direct-out"
     },
   "experimental": {
     "cache_file": {
@@ -166,5 +218,3 @@
     }
   }
 }
-
-
