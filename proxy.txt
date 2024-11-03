@@ -1,0 +1,2 @@
+payload:
+  - '+.weesunday.com'
