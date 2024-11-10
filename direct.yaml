@@ -1,3 +1,5 @@
 payload:
   - '+.cloudflare.com'
   - '+.pages.dev'
+  - '+.workers.dev'
+
