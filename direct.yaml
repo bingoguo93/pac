@@ -1,2 +1,3 @@
 payload:
   - '+.cloudflare.com'
+  - '+.pages.dev'
