@@ -156,7 +156,6 @@
           },
           {
               "domain_keyword": [
-              "test",
               "wogg"
               ],
               "outbound": "direct-out"
