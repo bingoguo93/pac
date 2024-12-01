@@ -159,6 +159,12 @@
               "wogg"
               ],
               "outbound": "direct-out"
+          },
+          {
+            "rule_set": [
+              "proxy"
+            ],
+            "outbound": "socks-out"
           }
     ],
     "rule_set": [
@@ -173,10 +179,16 @@
         "tag": "geosite-geolocation-cn",
         "format": "binary",
         "url": "https://raw.githubusercontent.com/SagerNet/sing-geosite/rule-set/geosite-geolocation-cn.srs"
+      },
+      {
+        "tag": "proxy",
+        "type": "remote",
+        "format": "binary",
+        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/proxy.srs"
       }
     ],
     "auto_detect_interface": true,
-    "final": "socks-out"
+    "final": "direct-out"
     },
   "experimental": {
     "cache_file": {
