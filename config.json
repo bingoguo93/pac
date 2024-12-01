@@ -184,8 +184,7 @@
         "tag": "proxy",
         "type": "remote",
         "format": "binary",
-        "url": "https://github.com/DustinWin/ruleset_geodata/releases/download/sing-box-ruleset/proxy.srs",
-        "detour": "socks-out"        
+        "url": "https://cdn.jsdelivr.net/gh/DustinWin/ruleset_geodata@sing-box-ruleset/proxy.srs"
       }
     ],
     "auto_detect_interface": true,
