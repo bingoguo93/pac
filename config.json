@@ -7,12 +7,12 @@
     },
     "dns": {
         "servers": [
-		    {
+	   {
                 "tag": "default-dns",
-                "address": "192.168.31.2",
+                "address": "223.5.5.5",
                 "detour": "direct-out"
             },
-			{
+	    {
                 "tag": "block-dns",
                 "address": "rcode://name_error"
             }, 
@@ -43,8 +43,8 @@
                 "server": "default-dns"
             }, 
 			{
-                "rule_set": "geosite-geolocation-cn",
-                "server": "default-dns"
+                "rule_set": "proxy",
+                "server": "cloudflare"
             }
         ],
         "strategy": "ipv4_only",
