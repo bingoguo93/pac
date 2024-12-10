@@ -149,37 +149,12 @@
           },
           {
             "rule_set": [
-              "geoip-cn",
-              "geosite-geolocation-cn"
-            ],
-            "outbound": "direct-out"
-          },
-          {
-              "domain_keyword": [
-              "wogg"
-              ],
-              "outbound": "direct-out"
-          },
-          {
-            "rule_set": [
               "proxy"
             ],
             "outbound": "socks-out"
           }
     ],
     "rule_set": [
-      {
-        "type": "remote",
-        "tag": "geoip-cn",
-        "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/SagerNet/sing-geoip@rule-set/geoip-cn.srs"
-      },
-      {
-        "type": "remote",
-        "tag": "geosite-geolocation-cn",
-        "format": "binary",
-        "url": "https://cdn.jsdelivr.net/gh/SagerNet/sing-geosite@rule-set/geosite-geolocation-cn.srs"
-      },
       {
         "tag": "proxy",
         "type": "remote",
