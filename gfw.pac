@@ -130,18 +130,18 @@ function FindProxyForURL(url, host) {
         return direct;
     }
 
-    ip = isIpAddress(host) ? host : dnsResolve(host);
+//    ip = isIpAddress(host) ? host : dnsResolve(host);
 
-    if (!ip) {
-        debug('无法解析 IP 地址', host, 'N/A');
-        return direct;
-    } else if (isPrivateIp(ip)) {
-        debug('域名解析后命中私有 IP 地址', host, ip);
-        return direct;
-    } else if (radixTree.search(ipToBinary(ip))) {
-        debug('匹配到直连IP', host, ip);
-        return direct;
-    }
+//    if (!ip) {
+//        debug('无法解析 IP 地址', host, 'N/A');
+//        return direct;
+//    } else if (isPrivateIp(ip)) {
+//        debug('域名解析后命中私有 IP 地址', host, ip);
+//        return direct;
+//    } else if (radixTree.search(ipToBinary(ip))) {
+//        debug('匹配到直连IP', host, ip);
+//        return direct;
+//    }
 
     debug('未命中任何规则', host, ip);
     return direct;
