@@ -1,11 +1,11 @@
 /**
  * genpac 3.0.1 https://github.com/JinnLynn/genpac
- * Generated: 2025-03-16 14:44:28
+ * Generated: 2025-03-16 14:55:27
  * GFWList Last-Modified: 2025-03-16 09:22:30
  * GFWList From: online[https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt]
  */
 
-var proxy = 'SOCKS5 proxy.local:7891; DIRECT;';
+var proxy = 'SOCKS5 192.168.31.82:7891; DIRECT;';
 var rules = [
     [
         [],
