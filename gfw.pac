@@ -134,7 +134,7 @@ function FindProxyForURL(url, host) {
 
     if (!ip) {
         debug('无法解析 IP 地址', host, 'N/A');
-        return proxy;
+        return direct;
     } else if (isPrivateIp(ip)) {
         debug('域名解析后命中私有 IP 地址', host, ip);
         return direct;
@@ -144,7 +144,7 @@ function FindProxyForURL(url, host) {
     }
 
     debug('未命中任何规则', host, ip);
-    return proxy;
+    return direct;
 }
 
 var allowAlert = true
