@@ -1,7 +1,7 @@
 /**
  * genpac 3.0.1 https://github.com/JinnLynn/genpac
- * Generated: 2025-03-16 23:33:00
- * GFWList Last-Modified: 2025-03-16 09:22:30
+ * Generated: 2025-03-17 08:26:46
+ * GFWList Last-Modified: 2025-03-17 01:09:18
  * GFWList From: online[https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt]
  */
 
@@ -4435,7 +4435,7 @@ var rules = [
             "powerphoto.org",
             "ppy.sh",
             "prayforchina.net",
-            "premeforwindows7.com",
+            "prcleader.org",
             "premproxy.com",
             "presentation.new",
             "presentationzen.com",
