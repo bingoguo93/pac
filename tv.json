@@ -1,7 +1,7 @@
 
 
 //  关注微信公众号【太太太硬了】有惊喜哦！！！
-//  当前接口：http://www.饭太硬.com/tv/
+// 当前接口：http://www.饭太硬.com/tv/
 
 {
 "spider":"https://oss4liview.moji.com/thd_file/2026/02/06/dde9ec1976c0d7a93ba5eb9d6b2729a1.jpg;md5;01da32c9bde90313b87f785710070eee",
@@ -81,6 +81,4 @@
 {"name":"虎牙一起看","type":0,"url":"https://sub.ottiptv.cc/huyayqk.m3u","playerType":2,"timeout":10,"ua":"okHttp/Mod-1.5.0.0"},
 {"name":"斗鱼一起看","type":0,"url":"https://sub.ottiptv.cc/douyuyqk.m3u","playerType":2,"timeout":10,"ua":"okHttp/Mod-1.5.0.0"},
 {"name":"B站直播","type":0,"url":"https://sub.ottiptv.cc/bililive.m3u","playerType":2,"timeout":10,"ua":"okHttp/Mod-1.5.0.0"},
-{"name":"YY轮播","type":0,"url":"https://sub.ottiptv.cc/yylunbo.m3u","playerType":2,"timeout":10,"ua":"okHttp/Mod-1.5.0.0"}
-]
-}
+{"name":"YY轮播","type":0,"url":"https://sub.ottiptv.cc/yylunbo.m3u","playerType":2,"timeout":10,"ua":"okHttp/Mod-1.5.0.0"}]}
