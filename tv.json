@@ -1,9 +1,9 @@
-//      >>> 当前时间是：2026-02-24 20:26:38 <<<
+//      >>> 当前时间是：2026-02-25 00:28:37 <<<
 //     关注微信公众号【太太太硬了】有惊喜哦！！！
 
 //     当前接口：http://tvbox.xn--4kq62z5rby2qupq9ub.top/
 {
-    "spider": "https://aisearch.cdn.bcebos.com/fileManager/40aicoLgDtklAyS8-ZZBrA/1770659955442a_rFbc.txt;md5;090a5f72a69bac293b5ccf36b82f19cf",
+    "spider": "https://aisearch.cdn.bcebos.com/fileManager/40aicoLgDtklAyS8-ZZBrA/17719483685809pdmDM.txt;md5;934d3d347b9810c923d3db6fbc36d148",
     "wallpaper": "http://王二小放牛娃牛逼.999888987.xyz",
     "logo": "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaFile/3CEAE9E_773_wexfnw_20250911190012684newMediaFile.gif",
     "sites": [
@@ -19,7 +19,7 @@
         },
         {
             "key": "Doubana",
-            "name": "🐮【更新日期:20260210】🐮",
+            "name": "🐮【更新日期:20260225】🐮",
             "type": 3,
             "api": "csp_DoubanGuard",
             "searchable": 0,
@@ -190,14 +190,6 @@
             "name": "🌺文才┃秒播🌺",
             "type": 3,
             "api": "csp_WexwencaiGuard",
-            "searchable": 1,
-            "changeable": 1
-        },
-        {
-            "key": "Wexxpgtv",
-            "name": "🌺苹果┃秒播🌺",
-            "type": 3,
-            "api": "csp_WexxpgtvGuard",
             "searchable": 1,
             "changeable": 1
         },
