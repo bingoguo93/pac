@@ -1,9 +1,9 @@
-//      >>> 当前时间是：2026-03-29 20:29:32 <<<
+//      >>> 当前时间是：2026-04-18 08:14:22 <<<
 //     关注微信公众号【太太太硬了】有惊喜哦！！！
 
 //     当前接口：http://tvbox.xn--4kq62z5rby2qupq9ub.top/
 {
-    "spider": "https://aisearch.cdn.bcebos.com/fileManager/pzB7vSo_ZKMdkLpEH2KJFw/1774282192833e3_9ol.txt;md5;5b6e3b27292a71429835225c933bbda2",
+    "spider": "https://file.icve.com.cn/file_doc/860/128/D70201C1A77626EF5D247CDB50ABB035.txt;md5;d70201c1a77626ef5d247cdb50abb035",
     "wallpaper": "http://王二小放牛娃牛逼.999888987.xyz",
     "logo": "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaFile/3CEAE9E_773_wexfnw_20250911190012684newMediaFile.gif",
     "sites": [
@@ -15,27 +15,27 @@
             "searchable": 0,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://aisearch.cdn.bcebos.com/fileManager/40aicoLgDtklAyS8-ZZBrA/1767300502404G_ouRK.txt"
+            "ext": "https://cdn.waimaimingtang.com/file/images/bwc/20260414181247-ae51abfbfe.txt"
         },
         {
             "key": "Doubana",
-            "name": "🐮【更新日期:20260324】🐮",
+            "name": "🐮【更新日期:20260416】🐮",
             "type": 3,
             "api": "csp_DoubanGuard",
             "searchable": 0,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://aisearch.cdn.bcebos.com/fileManager/40aicoLgDtklAyS8-ZZBrA/1767300502404G_ouRK.txt"
+            "ext": "https://cdn.waimaimingtang.com/file/images/bwc/20260414181247-ae51abfbfe.txt"
         },
         {
-            "key": "Doubana",
+            "key": "Doubanaaa",
             "name": "⬇️【网盘类先扫码】⬇️",
             "type": 3,
             "api": "csp_DoubanGuard",
             "searchable": 0,
             "quickSearch": 0,
             "filterable": 0,
-            "ext": "https://aisearch.cdn.bcebos.com/fileManager/40aicoLgDtklAyS8-ZZBrA/1767300502404G_ouRK.txt"
+            "ext": "https://cdn.waimaimingtang.com/file/images/bwc/20260414181247-ae51abfbfe.txt"
         },
         {
             "key": "Wexconfig",
