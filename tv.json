@@ -1,9 +1,9 @@
-//      >>> 当前时间是：2026-04-20 08:33:53 <<<
+//      >>> 当前时间是：2026-05-01 00:07:29 <<<
 //     关注微信公众号【太太太硬了】有惊喜哦！！！
 
 //     当前接口：http://tvbox.xn--4kq62z5rby2qupq9ub.top/
 {
-    "spider": "https://file.icve.com.cn/file_doc/860/128/D70201C1A77626EF5D247CDB50ABB035.txt;md5;d70201c1a77626ef5d247cdb50abb035",
+    "spider": "https://nos.netease.com/ysf/a76ae1d52ff79d12d655caaf7499c8c7.txt;md5;69aaa82befede80e5e905128732f1a3c",
     "wallpaper": "http://王二小放牛娃牛逼.999888987.xyz",
     "logo": "https://storage.7x24cc.com/storage-server/presigned/ss1/a6-online-fileupload/newMediaFile/3CEAE9E_773_wexfnw_20250911190012684newMediaFile.gif",
     "sites": [
@@ -19,7 +19,7 @@
         },
         {
             "key": "Doubana",
-            "name": "🐮【更新日期:20260416】🐮",
+            "name": "🐮【更新日期:20260426】🐮",
             "type": 3,
             "api": "csp_DoubanGuard",
             "searchable": 0,
